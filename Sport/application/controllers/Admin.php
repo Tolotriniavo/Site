@@ -50,7 +50,7 @@ class Admin extends CI_Controller {
             $crud->set_table('article');
             $crud->set_field_upload('photo','assets/img');
 
-            $crud->callback_before_insert(array($this, 'resize_image'));
+            
 
             $output = $crud->render();
 
@@ -62,23 +62,7 @@ class Admin extends CI_Controller {
         }
     }
     
-    public function resize_image ($post_array) 
-    {
-        $file_uploaded = $post_array (['image_url']);
-
-        $config = array (
-        'image_library' => 'gd2',
-        'source_image'  => $file_uploaded,
-        'create_thumb' => FALSE,
-        'maintain_ratio' => TRUE,
-        'width'  => 800,
-        'height' => 600);
-
-        $this->load->library('image_lib', $config);
-
-        $this->image_lib->resize();
-
-    }
+    
     
 
     public function categorie()
