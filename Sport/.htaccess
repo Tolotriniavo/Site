@@ -1,0 +1,30 @@
+
+
+RewriteRule ^single-([^/]+).html$   Welcome/single/$1 [L]
+RewriteRule ^categorie-([^/]+).html$   Welcome/categorie/$1 [L]
+RewriteRule ^auteur-([^/]+).html$   Welcome/auteur/$1 [L]
+RewriteRule ^date-([^/]+).html$   Welcome/date/$1 [L]
+RewriteRule ^acceuil.html$   Welcome [L]
+
+RewriteRule ^Ajouter-article.html$   Admin/article/add [L]
+RewriteRule ^Ajouter-categorie.html$   Admin/categorie/add [L]
+RewriteRule ^Ajouter-auteur.html$   Admin/auteur/add [L]
+RewriteRule ^Modifier-article-([^/]+).html$   Admin/article/edit/$1 [L]
+RewriteRule ^Modifier-categorie-([^/]+).html$   Admin/categorie/edit/$1 [L]
+RewriteRule ^Modifier-auteur-([^/]+).html$   Admin/auteur/edit/$1 [L]
+RewriteRule ^Liste-article.html$   Admin/article [L]
+RewriteRule ^Liste-categorie.html$   Admin/categorie [L]
+RewriteRule ^Liste-auteur.html$   Admin/auteur [L]
+RewriteRule ^Connexion.html$   Admin/Connexion [L]
+RewriteRule ^Deconnexion.html$   Admin/deconnexion [L]
+RewriteRule ^Login.html$   Admin [L]
+
+
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
+
+
